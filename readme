@@ -1,0 +1,8 @@
+
+
+
+By default I'm loading default data. IF user enters any random value in text box and click on fetch he will get the default data. 
+When user enters city name I'm placing that city in a collection and displaying it below so that user can visit back when he click the city. 
+
+I have extracted data from forecast.io site for cities london, california, newyork, washington and toranto. and published this data to the site
+we have limited data and we are showing only london, california, newyork, washington and toranto cities data.

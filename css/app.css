@@ -1,0 +1,75 @@
+body{
+	margin: 0;
+	background: #d6d3d2;
+}
+#map {
+    height: 100%;
+    width: 100%;
+	margin: 0;
+}
+#url{
+	width: 60%;
+    margin: 5px 10px;
+    display: inline-block;
+}
+#class{
+	min-height: 585px;
+background: #fff;
+margin-top: 10px;
+}
+.searchedDiv{
+	padding-left: 30px;
+    padding-top: 15px;
+}
+ul.searched{
+	list-style-type: none;
+}
+ul.searched li{
+	display: block;
+	padding: 2px;
+}
+ul.searched li a{
+	cursor: pointer;
+}
+ul.forcastList {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+ul.forcastList li div.container {
+    text-align: left;
+    height: 325px;
+    text-decoration: none;
+    display: table-cell;
+    vertical-align: inherit;
+    background: #f7f6f5;
+    padding: 10px;
+	border:1px solid #c8c8c8;
+}
+.wi{font-size:65px;}
+
+.large-temp{font-size: 1.5em;}
+.temp-label{color: #999; font-size: 0.89em;}
+.realfeel{color: #999; font-size: 0.6em;}
+.temp-summary{font-size: 0.79em; display: block; padding-top: 9px;}
+
+
+
+ul.forcastList li div.current {
+    background: white;
+}
+
+div.current .large-temp{font-size: 2em;}
+div.current .temp-label{color: #999; font-size: 1.3em;}
+div.current .realfeel{color: #999; font-size: 0.89em;}
+div.current .temp-summary{font-size: 0.84em;}
+
+ul.forcastList li div  .icon{
+	height: 85px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,121 @@
+<html> 
+	<head>
+		<script src="js/libs/jquery.min.js"></script>
+		
+		<script src="js/libs/angular.js"></script>
+		<script src="js/libs/bootstrap.min.js"></script>
+		<script src="js/app.js"></script>
+		<link rel="stylesheet" href="css/libs/bootstrap.min.css">
+		<link rel="stylesheet" href="css/app.css">
+		<link rel="stylesheet" href="css/weather-icons.min.css">
+		
+		
+	</head>
+	<body ng-app="wfApp">
+		<div ng-controller="appController as ctrl">
+				<div id="class" class="col-md-10 .col-xs-12 col-md-offset-1">
+					<h1>Weather {{ttile}}</h1>
+					<hr/>
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="col-sm-12">
+								<form id="formGeoLocation" ng-submit="getWeatherForcast()">
+								  <div class="col-sm-9">
+									<input id="city" type="text" ng-model="city" class="form-control website" required="" value="" name="city">
+									</div>
+									<div class="col-sm-3">
+								  <input class="btn btn-primary" type="submit" value="Fetch">
+								  </div>
+								</form>
+							</div>
+							<hr/>
+							<div class="col-sm-12 searchedDiv">
+								<h4>Searched</h4>
+								<ul class="searched">
+									<li ng-repeat="item in ctrl.searched">
+										<a ng-click="fetchDetails(item)">{{item}}</a>
+									</li>
+								</ul>
+							</div>
+							
+							<hr>
+						</div>
+						<div  class="col-sm-8">
+							<div  class="col-sm-12">
+								<ul class="forcastList col-sm-12">
+									<li>
+										<div class="container current  col-sm-4">	
+											<h5>Current </h5>
+											<div class="icon">
+												<i class="wi wi-forecast-io-{{ctrl.selectedCity.currently.icon}}"></i>
+											</div>
+											<div class="info">
+												<div class="temp">
+													<span class="large-temp">{{ctrl.selectedCity.currently.temperature}} &ordm;</span><span class="temp-label">F</span>
+													<br/>
+													<span class="realfeel">Feels like {{ctrl.selectedCity.currently.apparentTemperature}}</span><br/>
+													<span class="temp-summary">{{ctrl.selectedCity.currently.summary}}</span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div  class="container  col-sm-2">	
+											<h5>Today</h5>
+											<div class="icon">
+												<i class="wi wi-forecast-io-{{ctrl.selectedCity.daily.data[0].icon}}"></i>
+											</div>
+											<div class="info">
+												<div class="temp">
+													<span class="large-temp">{{ctrl.selectedCity.daily.data[0].temperatureMax}} &ordm;</span>
+													<span class="temp-label">/{{ctrl.selectedCity.daily.data[0].temperatureMin}}&ordm;F</span><br/>
+													<span class="temp-summary">{{ctrl.selectedCity.daily.data[0].summary}} </span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div  class="container  col-sm-2">	
+											<h5>Tomorrow</h5>
+											<div class="icon">
+												<i class="wi wi-forecast-io-{{ctrl.selectedCity.daily.data[1].icon}}"></i>
+											</div>
+											<div class="info">
+												<div class="temp">
+													<span class="large-temp">{{ctrl.selectedCity.daily.data[1].temperatureMax}} &ordm;</span>
+													<span class="temp-label">/{{ctrl.selectedCity.daily.data[1].temperatureMin}}&ordm;F</span><br/>
+													<span class="temp-summary">{{ctrl.selectedCity.daily.data[1].summary}} </span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div  class="container col-sm-2">	
+											<h5>Day after Tomorrow</h5>
+											<div class="icon">
+												<i class="wi wi-forecast-io-{{ctrl.selectedCity.daily.data[2].icon}}"></i>
+											</div>
+											<div class="info">
+												<div class="temp">
+													<span class="large-temp">{{ctrl.selectedCity.daily.data[2].temperatureMax}} &ordm;</span>
+													<span class="temp-label">/{{ctrl.selectedCity.daily.data[2].temperatureMin}}&ordm;F</span><br/>
+													<span class="temp-summary">{{ctrl.selectedCity.daily.data[2].summary}} </span>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					  </div>
+					
+				
+				</div>
+				
+				
+			
+		</div>
+		
+	<script src="js/app.js"></script>	
+	</body>
+</html>
